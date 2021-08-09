@@ -1,11 +1,9 @@
 syntax = "proto3";
 package com.uramnoil.awesome_minecraft_console.protocols;
 
-import "google/protobuf/empty.proto";
-
 service Console {
-  rpc Command (google.protobuf.Empty) returns (stream CommandResponse);
-  rpc Lines (stream LineRequest) returns (google.protobuf.Empty);
+  rpc Command (Empty) returns (stream CommandResponse);
+  rpc Lines (stream LineRequest) returns (Empty);
 }
 
 message CommandResponse {
@@ -15,3 +13,5 @@ message CommandResponse {
 message LineRequest {
   string message = 1;
 }
+
+message Empty {}
