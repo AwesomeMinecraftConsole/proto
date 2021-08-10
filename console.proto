@@ -2,16 +2,29 @@ syntax = "proto3";
 package com.uramnoil.awesome_minecraft_console.protocols;
 
 service Console {
-  rpc Command (Empty) returns (stream CommandResponse);
-  rpc Lines (stream LineRequest) returns (Empty);
+  rpc Console (stream LineRequest) returns (stream CommandResponse);
+  rpc Management (stream NotificationRequest) returns (stream OperationResponse);
 }
 
 message CommandResponse {
-  string message = 1;
+  string command = 1;
 }
 
 message LineRequest {
-  string message = 1;
+  string line = 1;
 }
 
-message Empty {}
+message OperationResponse {
+  oneof type {
+    Start start = 1;
+    Stop stop = 2;
+  }
+}
+
+message Start {}
+
+message Stop {}
+
+message NotificationRequest {
+  string message = 1;
+}
