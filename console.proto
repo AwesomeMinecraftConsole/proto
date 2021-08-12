@@ -15,15 +15,13 @@ message LineRequest {
 }
 
 message OperationResponse {
-  oneof type {
-    Start start = 1;
-    Stop stop = 2;
-  }
+  Operation operation = 1;
 }
 
-message Start {}
-
-message Stop {}
+enum Operation {
+  OPERATION_START = 0;
+  OPERATION_STOP = 1;
+}
 
 message NotificationRequest {
   string message = 1;
