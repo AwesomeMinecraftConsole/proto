@@ -20,7 +20,6 @@ message OperationResponse {
 
 enum Operation {
   OPERATION_START = 0;
-  OPERATION_STOP = 1;
 }
 
 message NotificationRequest {
