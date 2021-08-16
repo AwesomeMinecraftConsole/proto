@@ -1,7 +1,7 @@
 syntax = "proto3";
-package com.uramnoil.awesome_minecraft_console.protocols.consoled;
+package com.uramnoil.awesome_minecraft_console.protocols.weaver;
 
-service Consoled {
+service Weaver {
   rpc Console (stream LineRequest) returns (stream CommandResponse);
   rpc Management (stream NotificationRequest) returns (stream OperationResponse);
 }

@@ -1,9 +1,9 @@
 syntax = "proto3";
-package com.uramnoil.awesome_minecraft_console.protocols.octopass;
+package com.uramnoil.awesome_minecraft_console.protocols.endervision;
 
 import "google/protobuf/empty.proto";
 
-service Console {
+service EnderVision {
     rpc Console (stream CommandRequest) returns (stream LineResponse);
     rpc ConsoleManagement (stream ConsoleOperationResponse) returns (stream ConsoleNotificationRequest);
     rpc StatusChange (google.protobuf.Empty) returns (stream StatusChangedResponse);
