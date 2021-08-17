@@ -6,7 +6,7 @@ import "google/protobuf/empty.proto";
 service EnderVision {
     rpc Console (stream CommandRequest) returns (stream LineResponse);
     rpc ConsoleManagement (stream ConsoleOperationRequest) returns (stream ConsoleNotificationResponse);
-    rpc StatusChange (google.protobuf.Empty) returns (stream StatusChangedResponse);
+    rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersResponse);
 }
 
 message CommandRequest {
@@ -30,13 +30,7 @@ message ConsoleNotificationResponse {
     string message = 1;
 }
 
-message StatusChangedResponse {
-    oneof status {
-        OnlinePlayers online_players = 1;
-    }
-}
-
-message OnlinePlayers {
+message OnlinePlayersResponse {
     repeated OnlinePlayer players = 1;
 }
 
