@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.uramnoil.awesome_minecraft_console.protocols.acrobat;
+
+import "google/protobuf/empty.proto";
+
+service Acrobat {
+    rpc OnlinePlayers (OnlinePlayers) returns (google.protobuf.Empty);
+}
+
+message OnlinePlayers {
+    repeated OnlinePlayer players = 1;
+}
+
+message OnlinePlayer {
+    string id = 1;
+    string name = 2;
+    uint32 ping = 3;
+}

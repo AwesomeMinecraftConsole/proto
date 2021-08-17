@@ -1,27 +1,27 @@
 syntax = "proto3";
 package com.uramnoil.awesome_minecraft_console.protocols.weaver;
 
+import "weaver.proto";
+
 service Weaver {
-  rpc Console (stream LineRequest) returns (stream CommandResponse);
-  rpc Management (stream NotificationRequest) returns (stream OperationResponse);
+  rpc Console (stream Line) returns (stream Command);
+  rpc Management (stream Notification) returns (stream Operation);
 }
 
-message CommandResponse {
+message Command {
   string command = 1;
 }
 
-message LineRequest {
+message Line {
   string line = 1;
 }
 
-message OperationResponse {
-  Operation operation = 1;
+message Operation {
+  enum Type {
+    OPERATION_START = 0;
+  }
 }
 
-enum Operation {
-  OPERATION_START = 0;
-}
-
-message NotificationRequest {
-  string message = 1;
+message Notification {
+  string notification = 1;
 }

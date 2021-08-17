@@ -2,40 +2,11 @@ syntax = "proto3";
 package com.uramnoil.awesome_minecraft_console.protocols.endervision;
 
 import "google/protobuf/empty.proto";
+import "weaver.proto";
+import "acrobat.proto";
 
 service EnderVision {
-    rpc Console (stream CommandRequest) returns (stream LineResponse);
-    rpc ConsoleManagement (stream ConsoleOperationRequest) returns (stream ConsoleNotificationResponse);
-    rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersResponse);
-}
-
-message CommandRequest {
-    string command = 1;
-}
-
-message LineResponse {
-    string line = 1;
-}
-
-message ConsoleOperationRequest {
-    ConsoleOperation operation = 1;
-}
-
-enum ConsoleOperation {
-    OPERATION_START = 0;
-    OPERATION_STOP = 1;
-}
-
-message ConsoleNotificationResponse {
-    string message = 1;
-}
-
-message OnlinePlayersResponse {
-    repeated OnlinePlayer players = 1;
-}
-
-message OnlinePlayer {
-    string id = 1;
-    string name = 2;
-    uint32 ping = 3;
+    rpc Console (stream weaver.Command) returns (stream weaver.Line);
+    rpc ConsoleManagement (stream weaver.Operation) returns (stream weaver.Notification);
+    rpc OnlinePlayers (google.protobuf.Empty) returns (stream acrobat.OnlinePlayers);
 }
