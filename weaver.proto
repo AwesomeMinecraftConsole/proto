@@ -1,8 +1,6 @@
 syntax = "proto3";
 package com.uramnoil.awesome_minecraft_console.protocols.weaver;
 
-import "weaver.proto";
-
 service Weaver {
   rpc Console (stream Line) returns (stream Command);
   rpc Management (stream Notification) returns (stream Operation);
