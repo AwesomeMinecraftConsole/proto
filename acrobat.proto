@@ -4,10 +4,10 @@ package com.uramnoil.awesome_minecraft_console.protocols.acrobat;
 import "google/protobuf/empty.proto";
 
 service Acrobat {
-    rpc OnlinePlayers (OnlinePlayers) returns (google.protobuf.Empty);
+    rpc OnlinePlayers (OnlinePlayersRequest) returns (google.protobuf.Empty);
 }
 
-message OnlinePlayers {
+message OnlinePlayersRequest {
     repeated OnlinePlayer players = 1;
 }
 

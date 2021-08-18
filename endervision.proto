@@ -8,5 +8,9 @@ import "acrobat.proto";
 service EnderVision {
     rpc Console (stream weaver.Command) returns (stream weaver.Line);
     rpc ConsoleManagement (stream weaver.Operation) returns (stream weaver.Notification);
-    rpc OnlinePlayers (google.protobuf.Empty) returns (stream acrobat.OnlinePlayers);
+    rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersResponse);
+}
+
+message OnlinePlayersResponse {
+    repeated acrobat.OnlinePlayer online_players = 1;
 }
