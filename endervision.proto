@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.uramnoil.awesome_minecraft_console.protocols.endervision;
+package awesome_minecraft_console.endervision;
 
 import "google/protobuf/empty.proto";
 import "weaver.proto";

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.uramnoil.awesome_minecraft_console.protocols.acrobat;
+package awesome_minecraft_console.acrobat;
 
 import "google/protobuf/empty.proto";
 

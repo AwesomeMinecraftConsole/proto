@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.uramnoil.awesome_minecraft_console.protocols.weaver;
+package awesome_minecraft_console.weaver;
 
 service Weaver {
   rpc Console (stream Line) returns (stream Command);
