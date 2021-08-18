@@ -18,6 +18,7 @@ message Operation {
   enum Type {
     OPERATION_START = 0;
   }
+  Type operation = 1;
 }
 
 message Notification {
