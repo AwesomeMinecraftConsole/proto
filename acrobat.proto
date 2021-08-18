@@ -8,7 +8,7 @@ service Acrobat {
 }
 
 message OnlinePlayersRequest {
-    repeated OnlinePlayer players = 1;
+    repeated OnlinePlayer online_players = 1;
 }
 
 message OnlinePlayer {
