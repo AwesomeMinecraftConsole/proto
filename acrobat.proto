@@ -4,7 +4,7 @@ package awesome_minecraft_console.acrobat;
 import "google/protobuf/empty.proto";
 
 service Acrobat {
-    rpc OnlinePlayers (OnlinePlayersRequest) returns (google.protobuf.Empty);
+    rpc OnlinePlayers (stream OnlinePlayersRequest) returns (google.protobuf.Empty);
 }
 
 message OnlinePlayersRequest {
