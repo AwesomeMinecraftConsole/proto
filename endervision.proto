@@ -7,7 +7,7 @@ import "acrobat.proto";
 
 service EnderVision {
     rpc Console (stream weaver.Command) returns (stream weaver.Line);
-    rpc ConsoleManagement (stream weaver.Operation) returns (stream weaver.Notification);
+    rpc Management (stream weaver.Operation) returns (stream weaver.Notification);
     rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersResponse);
 }
 
