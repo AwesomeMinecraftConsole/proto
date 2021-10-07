@@ -1,0 +1,42 @@
+syntax = "proto3";
+package awesome_minecraft_console.endervision;
+
+import "google/protobuf/empty.proto";
+
+service EnderVision {
+  rpc Console (stream Command) returns (stream Line);
+  rpc Management (stream Operation) returns (stream Notification);
+}
+
+service Acrobat {
+  rpc OnlinePlayers (stream OnlinePlayersRequest) returns (google.protobuf.Empty);
+}
+
+message Command {
+  string command = 1;
+}
+
+message Line {
+  string line = 1;
+}
+
+message Operation {
+  enum Type {
+    OPERATION_START = 0;
+  }
+  Type operation = 1;
+}
+
+message Notification {
+  string notification = 1;
+}
+
+message OnlinePlayersRequest {
+  repeated OnlinePlayer online_players = 1;
+}
+
+message OnlinePlayer {
+  string id = 1;
+  string name = 2;
+  uint32 ping = 3;
+}
