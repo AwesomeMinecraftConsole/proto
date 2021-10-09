@@ -6,6 +6,7 @@ import "google/protobuf/empty.proto";
 service EnderVision {
   rpc Console (stream Command) returns (stream Line);
   rpc Management (stream Operation) returns (stream Notification);
+  rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersRequest);
 }
 
 service Acrobat {
