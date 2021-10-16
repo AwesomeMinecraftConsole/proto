@@ -7,6 +7,7 @@ service EnderVision {
   rpc Console (stream Command) returns (stream Line);
   rpc Management (stream Operation) returns (stream Notification);
   rpc OnlinePlayers (google.protobuf.Empty) returns (stream OnlinePlayersResponse);
+  rpc Skins (google.protobuf.Empty) returns (stream Skin);
 }
 
 service Acrobat {
@@ -43,5 +44,9 @@ message OnlinePlayersResponse {
 message OnlinePlayer {
   string id = 1;
   string name = 2;
-  uint32 ping = 3;
+}
+
+message Skin {
+  string playerId = 1;
+  string data = 2;
 }
